@@ -44,5 +44,16 @@
         <input type="hidden" name="number" value="{{ $originalNumber }}">
         <button type="submit">Redo with the Same Number</button>
     </form>
+
+<!-- Display previous data on the submit page -->
+@if ($previousData)
+    <h3>Previous Data:</h3>
+    <ul>
+        @foreach($previousData as $data)
+            <li>{{ $data->original_number }} => {{ $data->altered_number }}</li>
+        @endforeach
+    </ul>
+@endif
+
 </body>
 </html>

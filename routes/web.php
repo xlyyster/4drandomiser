@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('math');
-});
+Route::get('/', 'App\Http\Controllers\MathController@home');
 
 Route::post('/calculate', 'App\Http\Controllers\MathController@calculate');
+
+Route::get('/latest-data', 'App\Http\Controllers\MathController@latestData');
 
