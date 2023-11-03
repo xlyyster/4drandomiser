@@ -60,13 +60,18 @@ class MathController extends Controller
     }
 
     public function result()
-    {
-        // Retrieve previous data
-        $previousData = $this->getPreviousData();
+{
+    // Retrieve previous data
+    $previousData = $this->getPreviousData();
 
-        return view('result', [
-            'previousData' => $previousData, // Pass previous data to the view
-        ]);
+    // Check if there is no data, and redirect to the home page
+    if ($previousData->isEmpty()) {
+        return redirect('/');
+    }
+
+    return view('result', [
+        'previousData' => $previousData,
+    ]);
     }
 
     // New method to retrieve previous data

@@ -1,3 +1,7 @@
+@php
+    use App\PreviousData;
+@endphp
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,9 +71,17 @@
         <div class="result-box">
             <h1>
                 @php
-                    $numberArray = str_split($originalNumber);
-                    $numberArray[$position] = '<span class="underline red-text">' . $numberArray[$position] . '</span>';
-                    echo implode('', $numberArray);
+                    if ($originalNumber) {
+                        $numberArray = str_split($originalNumber);
+                        $numberArray[$position] = '<span class="underline red-text">' . $numberArray[$position] . '</span>';
+                        echo implode('', $numberArray);
+                    } else {
+                        // Fetch and display the latest data from the database
+                        $latestData = PreviousData::latest('created_at')->first();
+                        $numberArray = str_split($latestData->original_number);
+                        $numberArray[$latestData->position] = '<span class="underline red-text">' . $numberArray[$latestData->position] . '</span>';
+                        echo implode('', $numberArray);
+                    }
                 @endphp
             </h1>
         </div>
@@ -77,12 +89,25 @@
         <div class="result-heading">Calculation:</div>
         <div class="result-box">
             <h1>
-                @if($isAddition)
-                    {{ $originalNumber[$position] }} + {{ $alterationValue }}
+                @if($originalNumber)
+                    @if($isAddition)
+                        {{ $originalNumber[$position] }} + {{ $alterationValue }}
+                    @else
+                        {{ $originalNumber[$position] }} - {{ abs($alterationValue) }}
+                    @endif
+                    = {{ $newNumber }}
                 @else
-                    {{ $originalNumber[$position] }} - {{ abs($alterationValue) }}
+                    @php
+                        // Fetch and display the latest data from the database
+                        $latestData = PreviousData::latest('created_at')->first();
+                        $isAddition = $latestData->alteration_value > 0;
+                        $alterationValue = abs($latestData->alteration_value);
+                        echo $latestData->original_number[$latestData->position];
+                        echo $isAddition ? ' + ' : ' - ';
+                        echo $alterationValue;
+                        echo ' = ' . $latestData->altered_number;
+                    @endphp
                 @endif
-                = {{ $newNumber }}
             </h1>
         </div>
 
