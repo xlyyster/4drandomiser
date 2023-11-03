@@ -1,0 +1,63 @@
+/* Add your numpad CSS styles here */
+.numpad-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.numpad-display input {
+    width: 80%;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.numpad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.numpad-button, .numpad-clear, .numpad-submit {
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.numpad-button:hover, .numpad-clear:hover, .numpad-submit:hover {
+    background-color: #d0d0d0;
+}
+
+/* CSS for mobile phones (below 480px) */
+@media screen and (max-width: 480px) {
+    .numpad-display input {
+        font-size: 18px;
+    }
+    .numpad-button, .numpad-clear, .numpad-submit {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* CSS for tablets/iPads (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .numpad-display input {
+        font-size: 20px;
+    }
+    .numpad-button, .numpad-clear, .numpad-submit {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+/* CSS for desktop screens (above 768px) */
+@media screen and (min-width: 769px) {
+    .numpad-display input {
+        font-size: 24px;
+    }
+    .numpad-button, .numpad-clear, .numpad-submit {
+        font-size: 20px;
+        padding: 12px;
+    }
+}

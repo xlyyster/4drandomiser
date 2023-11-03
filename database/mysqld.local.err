@@ -42,3 +42,12 @@
 2023-11-02T10:54:03.381199Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
 2023-11-02T10:54:03.396381Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /tmp/mysqlx.sock
 2023-11-02T10:54:03.396401Z 0 [System] [MY-010931] [Server] /Users/Shared/DBngin/mysql/8.0.33/bin/mysqld: ready for connections. Version: '8.0.33'  socket: '/tmp/mysql_3307.sock'  port: 3307  MySQL Community Server - GPL.
+2023-11-03T09:51:17.117878Z 0 [System] [MY-010116] [Server] /Users/Shared/DBngin/mysql/8.0.33/bin/mysqld (mysqld 8.0.33) starting as process 3376
+2023-11-03T09:51:17.125483Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /Users/bryan/Desktop/workspace/4drandomiser/database/ is case insensitive
+2023-11-03T09:51:17.127381Z 0 [Warning] [MY-010122] [Server] One can only use the --user switch if running as root
+2023-11-03T09:51:17.197043Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-11-03T09:51:17.399738Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-11-03T09:51:17.574066Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-11-03T09:51:17.574086Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-11-03T09:51:17.591774Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /tmp/mysqlx.sock
+2023-11-03T09:51:17.591800Z 0 [System] [MY-010931] [Server] /Users/Shared/DBngin/mysql/8.0.33/bin/mysqld: ready for connections. Version: '8.0.33'  socket: '/tmp/mysql_3307.sock'  port: 3307  MySQL Community Server - GPL.
